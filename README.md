@@ -18,7 +18,7 @@ ST2Vec is a representation learning based solution that considers fine-grained s
 If you want to use our codes and datasets in your research, please cite:
 
 ```
-@inproceedings{HAKG22,
+@inproceedings{ST2Vec22,
   author    = {Ziquan Fang and
                Yuntao Du and
                Xinjun Zhu and
