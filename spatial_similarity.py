@@ -11,6 +11,7 @@ import random
 import pandas as pd
 import yaml
 import collections
+import os
 
 random.seed(1998)
 config = yaml.safe_load(open('config.yaml'))
@@ -61,6 +62,9 @@ def parallel_point_com(i, id_list = []):
             batch_list.append(np.array(one_list,dtype=np.float32))
 
     batch_list = np.array(batch_list,dtype=np.float32)
+    p = './ground_truth/{}/'.format(dataset)
+    if not os.path.exists(p):
+        os.makedirs(p)
     np.save('./ground_truth/{}/Point_dis_matrix_{}.npy'.format(dataset, str(i)), batch_list)
 
 def generate_point_matrix():
@@ -123,11 +127,15 @@ def Traj_distance(k, sample_list = [[]], test_list = [[]], valiortest = None):
         all_dis_list.append(np.array(one_dis_list))
 
     all_dis_list = np.array(all_dis_list)
+    p = './ground_truth/{}/{}/{}_batch/'.format(dataset, str(config["distance_type"]), valiortest)
+    if not os.path.exists(p):
+        os.makedirs(p)
     np.save('./ground_truth/{}/{}/{}_batch/{}_spatial_distance_{}.npy'.format(dataset, str(config["distance_type"]), valiortest, str(config["distance_type"]), str(k)), all_dis_list)
 
     print('complete: ' + str(k))
 
-distance_matrix = generate_point_matrix()  # This code is required when computing triplets truth and commented out the rest of the time
+distance_matrix = generate_point_matrix()  # This line of code should be commented out when executing the current "spatial_similarity.py" file, but needed at any other time.
+
 @numba.jit(nopython=True, fastmath=True)
 def TP_dis(list_a = [] , list_b = []):
     tr1 = np.array(list_a)

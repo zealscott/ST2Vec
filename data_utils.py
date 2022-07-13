@@ -9,6 +9,7 @@ import spatial_similarity as spatial_com
 import temporal_similarity as temporal_com
 import pickle
 import yaml
+import os
 
 random.seed(1933)
 config = yaml.safe_load(open('config.yaml'))
@@ -164,6 +165,9 @@ class DataLoader():
         print("complete: sample")
         print(len(apn_time_triplets))
         print(apn_node_triplets[0])
+        p = './data/{}/triplet/{}/'.format(dataset, str(config["distance_type"]))
+        if not os.path.exists(p):
+            os.makedirs(p)
         pickle.dump(apn_node_triplets,open(str(config["path_node_triplets"]),'wb'))
         pickle.dump(apn_time_triplets, open(str(config["path_time_triplets"]), 'wb'))
         pickle.dump(apn_d2vec_triplets, open(str(config["path_d2vec_triplets"]), 'wb'))

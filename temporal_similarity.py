@@ -9,6 +9,7 @@ import sys
 import random
 import pandas as pd
 import yaml
+import os
 
 config = yaml.safe_load(open('config.yaml'))
 dataset = str(config["dataset"])
@@ -73,6 +74,9 @@ def timelist_distance(k, sample_list = [[]], test_list = [[]], valiortest=None):
         all_dis_list.append(np.array(one_dis_list))
 
     all_dis_list = np.array(all_dis_list)
+    p = './ground_truth/{}/{}/{}_batch/'.format(dataset, str(config["distance_type"]), valiortest)
+    if not os.path.exists(p):
+        os.makedirs(p)
     np.save('./ground_truth/{}/{}/{}_batch/{}_temporal_distance_{}.npy'.format(dataset, str(config["distance_type"]), valiortest, str(config["distance_type"]), str(k)), all_dis_list)
 
     print('complete: ' + str(k))
