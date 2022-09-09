@@ -7,7 +7,7 @@
 
 This is our Pytorch implementation for the paper:
 
-> Ziquan Fang, Yuntao Du, Xinjun Zhu, Danlei Hu, Lu Chen, Yunjun Gao and Christian S. Jensen. (2022). Spatio-Temporal Trajectory Similarity Learning in Road Networks. Paper in [ACM DL]() or Paper in [arXiv](https://arxiv.org/abs/2112.09339). In KDD'22, Washington DC, USA, August 14-18, 2022.
+> Ziquan Fang, Yuntao Du, Xinjun Zhu, Danlei Hu, Lu Chen, Yunjun Gao and Christian S. Jensen. (2022). Spatio-Temporal Trajectory Similarity Learning in Road Networks. Paper in [ACM DL](https://dl.acm.org/doi/abs/10.1145/3534678.3539375) or Paper in [arXiv](https://arxiv.org/abs/2112.09339). In KDD'22, Washington DC, USA, August 14-18, 2022.
 
 ## Introduction
 
@@ -28,6 +28,7 @@ If you want to use our codes and datasets in your research, please cite:
                Christian S. Jensen},
   title     = {Spatio-Temporal Trajectory Similarity Learning in Road Networks},
   booktitle = {{KDD}},
+  pages = {347–356},
   year      = {2022}
 }
 ```
