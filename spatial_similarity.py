@@ -263,7 +263,7 @@ def hot_node():
     print(max_num, max_idx)
     return max_idx
 
-hot_node_id = hot_node()
+hot_node_id = hot_node() # This line of code should be commented out when executing the current "spatial_similarity.py" file, but needed at any other time.
 
 @numba.jit(nopython=True, fastmath=True)
 def NetERP_dis(list_a = [], list_b = []):
