@@ -42,7 +42,7 @@ If you want to use our codes and datasets in your research, please cite:
 
 ## Datasets
 
-* Trajectory dataset (TDrive) is an open source data set
+* Trajectory dataset (TDrive) and Rome are an open source data set
 * We provided the road network data and map-matching result data
 
 ## Reproducibility & Training
